@@ -1,5 +1,7 @@
 package br.com.ifpe.clienteservice.servicos;
 
+import java.io.Serializable;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,7 @@ import br.com.ifpe.clienteservice.model.Cliente;
 public class ClienteService {
 
     @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+    private KafkaTemplate<String, Serializable> kafkaTemplate;
 
     public void save(String topico, Cliente cliente) {
 
